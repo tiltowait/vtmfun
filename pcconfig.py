@@ -1,15 +1,11 @@
 """Pynecone app configuration."""
 
-import os
-
 import pynecone as pc
-
-PORT = os.getenv("PORT", 8000)
 
 config = pc.Config(
     app_name="vtmfun",
-    api_url=f"0.0.0.0:{PORT}",
+    api_url="https://vtmfun-production.up.railway.app:8000",
     bun_path="/app/.bun/bin/bun",
     db_url="sqlite:///pynecone.db",
-    env=pc.Env.DEV,
+    env=pc.Env.PROD,
 )

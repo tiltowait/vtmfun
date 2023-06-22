@@ -36,8 +36,7 @@ WORKDIR /app
 ENV BUN_INSTALL="/app/.bun"
 COPY --from=build /app/ /app/
 
-RUN npm i -g next \
-    && pc init
+RUN pc init
 
 
 FROM runtime
@@ -46,8 +45,8 @@ COPY --chown=pynecone --from=init /app/ /app/
 USER pynecone
 WORKDIR /app
 
-CMD ["pc","run" , "--env", "prod"]
+CMD ["pc","run" , "--env", "prod", "--frontend-port", "5000"]
 
-EXPOSE 3000
+EXPOSE 5000
 EXPOSE 8000
 
