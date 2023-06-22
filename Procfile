@@ -1,1 +1,1 @@
-web: pc run --env prod
+web: pc init && pc run --env prod
