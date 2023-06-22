@@ -7,7 +7,7 @@ import pynecone as pc
 PORT = os.getenv("PORT", 8000)
 
 config = pc.Config(
-    app_name="app",
+    app_name="vtmfun",
     api_url=f"0.0.0.0:{PORT}",
     bun_path="/app/.bun/bin/bun",
     db_url="sqlite:///pynecone.db",
